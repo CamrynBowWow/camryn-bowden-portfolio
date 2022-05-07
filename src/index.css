@@ -4,7 +4,7 @@
 
 
 .menu-card {
-  @apply flex flex-col justify-center items-center bg-white h-screen font-mono py-40;
+  @apply flex flex-col justify-center items-center bg-neutral-50 h-screen font-mono py-40;
 }
 
 .center-content {
