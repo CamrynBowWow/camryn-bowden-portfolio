@@ -10,3 +10,11 @@
 .center-content {
   @apply flex flex-col justify-center items-center;
 }
+
+.link-hover {
+  @apply underline hover:text-blue-600;
+}
+
+.header-tags {
+  @apply text-3xl uppercase font-black;
+}
