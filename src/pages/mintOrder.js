@@ -1,9 +1,9 @@
 import React from 'react'
 
-const mintOrder = () => {
+const MintOrder = () => {
   return (
-    <div>mintOrder</div>
+    <div>M</div>
   )
 }
 
-export default mintOrder
+export default MintOrder

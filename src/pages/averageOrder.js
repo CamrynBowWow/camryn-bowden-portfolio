@@ -1,9 +1,9 @@
 import React from 'react'
 
-const averageOrder = () => {
+const AverageOrder = () => {
   return (
     <div>averageOrder</div>
   )
 }
 
-export default averageOrder
+export default AverageOrder

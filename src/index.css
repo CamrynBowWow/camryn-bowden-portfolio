@@ -18,3 +18,11 @@
 .header-tags {
   @apply text-3xl uppercase font-black;
 }
+
+.order-page-purchase {
+  @apply flex flex-col gap-5 items-center;
+}
+
+.link-purchase {
+  @apply py-4 px-8 bg-blue-500 rounded-xl text-2xl hover:bg-blue-600;
+}

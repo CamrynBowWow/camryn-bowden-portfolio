@@ -14,6 +14,15 @@ const About = () => {
           I know few languages like <b>C#</b>, <b>React</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>.
           You can look at my Github repo to see what I have done <a className="link-hover" href="https://github.com/SmallPeenwow">github.com/SmallPeenwow</a>
           </p>
+
+          <div className="text=3xl mt-5 mb-12 break-words w-3/4 font-mono italic flex flex-col gap-1">
+            <p className="mb-2">Here are additional things I know</p>
+        
+            <li>CSS Tailwind</li>
+            <li>Material UI</li>
+            <li>Socket.io</li>     
+
+          </div>
         </div>
     </>
   )
