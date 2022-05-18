@@ -26,3 +26,7 @@
 .link-purchase {
   @apply py-4 px-8 bg-blue-500 rounded-xl text-2xl hover:bg-blue-600;
 }
+
+.order-page-img {
+  @apply lg:h-96 lg:w-96 h-56 w-72 rounded shadow-md shadow-black;
+}

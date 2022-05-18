@@ -8,8 +8,7 @@ import Menu from './pages/menu';
 import Dropdown from './components/Dropdown';
 import Contact from './pages/contact';
 import OrderPage from './pages/OrderPage';
-import MintOrder from './pages/mintOrder';
-import AverageOrder from './pages/averageOrder';
+import PurchasePage from './pages/purchasePage';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,8 +41,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/orderPage" element={<OrderPage/>} />
-        <Route path="/mintOrder" element={<MintOrder/>} />
-        <Route path="/averageOrder" element={<AverageOrder/>} />
+        <Route path="/purchasePage" element={<PurchasePage />} />
       </Routes>
       <Footer />
     </>
