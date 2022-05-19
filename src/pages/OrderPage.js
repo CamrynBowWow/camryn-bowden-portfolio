@@ -9,7 +9,7 @@ const OrderPage = () => {
         <div className="order-page-purchase">
           <h1 className="header-tags">Mint Condition Peen</h1>
           <img src={MintPeen} alt="" className="order-page-img "/>
-          <p className="text-2xl bold">R35 000 Monthly</p>
+          <p className="text-2xl font-bold">R35 000 Monthly</p>
           <p>Good man peen</p>
           <Link to="/purchasePage" className="link-purchase">Purchase</Link>
         </div>
@@ -17,7 +17,7 @@ const OrderPage = () => {
         <div className="order-page-purchase">
           <h1 className="header-tags">Normal Peen</h1>
           <img src={NormalPeen} alt="" className="order-page-img"/>
-          <p className="text-2xl bold">R10 000 Monthly</p>
+          <p className="text-2xl font-bold">R10 000 Monthly</p>
           <p>Doesn't do much</p>
           <Link to="/purchasePage" className="link-purchase">Purchase</Link>
         </div>
