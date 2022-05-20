@@ -42,3 +42,12 @@
 .li-tags {
   @apply font-mono italic;
 }
+
+/* text-gray-600 */
+.input-purchase {
+  @apply text-center text-2xl font-semibold rounded-lg li-tags border-2 border-blue-400 shadow-md p-2 text-black hover:opacity-75 focus:border-blue-200 focus:outline-none focus:opacity-100;
+}
+
+.order-button-purchase {
+  @apply py-3 px-10 bg-blue-500 rounded-xl text-xl hover:bg-blue-400 font-semibold;
+}
