@@ -4,9 +4,11 @@ import ImageDoggo from '../images/SadPeenDoggo.png';
 const About = () => {
   return (
     <>
-        <div className="h-screen flex flex-col justify-center items-center bg-neutral-50">
-          <h1 className="header-tags p-5 mb-16">About Page Of Camryn Bowden</h1>
-          <img src={ImageDoggo} alt="" className="md:h-3/6 h-1/3 md:max-w-2xl rounded-3xl mb-20 shadow-md shadow-black hover:animate-spin-slow"/>
+        <div className="h-full flex flex-col justify-center items-center bg-neutral-50">
+          
+          <h1 className="header-tags p-5 mb-2 md:mb-14">About Page Of Camryn Bowden</h1>
+          <img src={ImageDoggo} alt="" className="h-52 md:h-3/6 max-w-2xl rounded-3xl mb-20 shadow-md shadow-black hover:animate-spin-slow"/>
+          
           <p className="text=3xl break-words w-3/4 font-mono italic">
           Hello, Welcome to the about page. 
           Were if you lucky I will tell you about myself.
@@ -21,9 +23,14 @@ const About = () => {
             <li>CSS Tailwind</li>
             <li>Material UI</li>
             <li>Socket.io</li>     
+            <li>Sass</li>     
+            <li>Next.js</li>     
+            <li>MySQL</li>     
+            <li>Firebase</li>     
 
           </div>
-        </div>
+
+        </div>      
     </>
   )
 }
