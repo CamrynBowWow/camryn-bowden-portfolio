@@ -49,6 +49,6 @@
   @apply text-center text-2xl font-semibold rounded-lg li-tags border-2 border-yellow-500 shadow-md p-2 text-black hover:opacity-75 focus:border-yellow-200 focus:outline-none focus:opacity-100;
 }
 
-.order-button-purchase {
+.order-input-purchase {
   @apply py-3 px-10 rounded-xl text-xl bg-yellow-500 hover:bg-yellow-400 font-semibold;
 }
