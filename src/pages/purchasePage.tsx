@@ -1,31 +1,35 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {
-//       serviceId: process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
-//       templateId: process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
-//       publicKey: process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY,
-//     }, // will be passed to the page component as props
-//   }
-// }
+import { useParams } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const PurchasePage = (props:any) => {
-  console.log(props.location.state);
+
   const [isPhoneNumber, setIsPhoneNumber] = useState(0);
 
   const [isName, setIsName] = useState("");
 
+  const [isSurname, setIsSurname] = useState("");
+
   const [isError, setIsError] = useState(true);
 
+  const {type} = useParams();
+
+  const navigate = useNavigate();
+
   const form = useRef<HTMLFormElement>(null);
+
+  const publicKey : string = (process.env.REACT_APP_YOUR_PUBLIC_KEY as string);
+  const templateId : string = (process.env.REACT_APP_YOUR_TEMPLATE_ID as string);
+  const serviceId : string = (process.env.REACT_APP_YOUR_SERVICE_ID as string);
 
   const setName = (event:any) => {
     setIsName(event.target.value);
   }
 
-  console.log(props.publicKey)
+  const setSurname = (event:any) => {
+    setIsSurname(event.target.value);
+  }
 
   const setNumber = (event:any) => { 
     if(isNaN(event.target.value)){
@@ -43,9 +47,8 @@ const PurchasePage = (props:any) => {
       return;
     }
     
-    if (isPhoneNumber !== 0 && isError && isName.length !== 0){
-      console.log('work')
-      emailjs.sendForm(props.serviceId, props.templateId, form.current, props.publicKey)
+    if (isPhoneNumber !== 0 && isError && isName.length !== 0 && isSurname.length !== 0){
+      emailjs.sendForm(serviceId, templateId, form.current, publicKey)
         .then((result) => {
           console.log(result.text);
         }, (error) => {
@@ -53,8 +56,12 @@ const PurchasePage = (props:any) => {
       });
       event.target.reset();
 
+      alert(`You have ordered ${type}`)
+
+      navigate("/");
+
     } else {
-      alert('Invalid request. Please check phone number and name.')
+      alert('Invalid request. Please check phone number, name or surname.')
     }
   }
 
@@ -66,10 +73,10 @@ const PurchasePage = (props:any) => {
         <h1 className="menu-header border-b-2 border-b-black">Client Information</h1>
 
           <input type="text" placeholder="NAME" name="userName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setName}></input>
-          <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase"></input>
+          <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setSurname}></input>
           <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase" : "input-purchase bg-red-600"} onChange={setNumber}></input>
           
-          {/* <input type="text" name="peen" className="hidden" value={}></input> */}
+          <input type="text" name="peen" className="hidden" defaultValue={type}></input>
 
           <input type="submit" value="Order" className="order-input-purchase"></input>        
 

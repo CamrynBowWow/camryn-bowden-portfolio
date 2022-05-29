@@ -4,11 +4,6 @@ import MintPeen from '../images/mintPeenCrop.png';
 import NormalPeen from '../images/normalPeenCrop.png';
 
 const OrderPage = () => {
-
-  const mintPeen = "Mint Condition Peen";
-
-  const normalPeen = "Normal Peen";
-
   return (
     <div className="h-screen flex flex-col justify-around md:flex-row items-center bg-neutral-50">
         <div className="order-page-purchase">
@@ -16,7 +11,7 @@ const OrderPage = () => {
           <img src={MintPeen} alt="" className="order-page-img "/>
           <p className="text-2xl font-bold">R35 000 Monthly</p>
           <p>Good man peen</p>
-          <Link to="/purchasePage" state={mintPeen} className="link-purchase">Purchase</Link>
+          <Link to="/purchasePage/Mint Condition Peen" className="link-purchase">Purchase</Link>
         </div>
 
         <div className="order-page-purchase">
@@ -24,7 +19,7 @@ const OrderPage = () => {
           <img src={NormalPeen} alt="" className="order-page-img"/>
           <p className="text-2xl font-bold">R10 000 Monthly</p>
           <p>Doesn't do much</p>
-          <Link to="/purchasePage" state={normalPeen} className="link-purchase">Purchase</Link>
+          <Link to="/purchasePage/Normal Peen" className="link-purchase">Purchase</Link>
         </div>
     </div>
   )

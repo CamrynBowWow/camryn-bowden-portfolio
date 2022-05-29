@@ -41,7 +41,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/orderPage" element={<OrderPage/>} />
-        <Route path="/purchasePage" element={<PurchasePage />} />
+        <Route path="/purchasePage/:type" element={<PurchasePage />} />
       </Routes>
       <Footer />
     </>
