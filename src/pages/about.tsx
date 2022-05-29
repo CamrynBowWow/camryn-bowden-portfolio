@@ -11,9 +11,9 @@ const About = () => {
           
           <p className="text=3xl break-words w-3/4 font-mono italic">
           Hello, Welcome to the about page. 
-          Were if you lucky I will tell you about myself.
+          Where if you lucky enough, I will tell you about myself.
           I've been coding for about less than 2 years now to this day 2022/05/07.
-          I know few languages like <b>C#</b>, <b>React</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>.
+          I know few languages like <b>C#</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>.
           You can look at my Github repo to see what I have done <a className="link-hover" href="https://github.com/SmallPeenwow">github.com/SmallPeenwow</a>
           </p>
 
@@ -21,6 +21,7 @@ const About = () => {
             <p className="mb-2">Here are additional things I know</p>
         
             <li>CSS Tailwind</li>
+            <li>React</li>
             <li>Material UI</li>
             <li>Socket.io</li>     
             <li>Sass</li>     
