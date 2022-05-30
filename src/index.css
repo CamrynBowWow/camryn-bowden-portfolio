@@ -52,3 +52,7 @@
 .order-input-purchase {
   @apply py-3 px-10 rounded-xl text-xl bg-yellow-500 hover:bg-yellow-400 font-semibold;
 }
+
+.menu-header-list {
+  @apply mb-1 font-semibold;
+}
