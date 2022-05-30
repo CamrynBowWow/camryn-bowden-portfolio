@@ -11,22 +11,21 @@ const About = () => {
           
           <p className="text=3xl break-words w-3/4 font-mono italic">
           Hello, Welcome to the about page. 
-          Where if you lucky enough, I will tell you about myself.
-          I've been coding for about less than 2 years now to this day 2022/05/07.
-          I know few languages like <b>C#</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>.
+          If you are lucky enough, I will tell you about myself.
+          I started coding in 2020/07/27 and here is how long its been going TIMESTAMP.
+          These are the languages I know <b>C#</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>.
           You can look at my Github repo to see what I have done <a className="link-hover" href="https://github.com/SmallPeenwow">github.com/SmallPeenwow</a>
           </p>
 
           <div className="text=3xl mt-5 mb-12 break-words w-3/4 font-mono italic flex flex-col gap-1">
-            <p className="mb-2">Here are additional things I know</p>
+            <p className="mb-2">Additional things I know</p>
         
             <li>CSS Tailwind</li>
             <li>React</li>
             <li>Material UI</li>
             <li>Socket.io</li>     
             <li>Sass</li>     
-            <li>Next.js</li>     
-            <li>MySQL</li>     
+            <li>Next.js</li>        
             <li>Firebase</li>     
 
           </div>
