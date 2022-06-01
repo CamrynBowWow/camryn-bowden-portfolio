@@ -4,10 +4,29 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'fade-out': {
+          '0%': {
+            opacity: '1',
+          },
+          '100%': {
+            opacity: '0',
+          }
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+      },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
-        'fadeOut': '0s linear 300ms',
-        'fadeIn': '0s linear 0s'
+        'fade-in': 'fade-in 0.5s ease-in',
+        'fade-out': 'fade-out 0.5s ease-out',
       }
     },
   },

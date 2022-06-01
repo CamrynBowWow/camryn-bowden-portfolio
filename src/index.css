@@ -55,14 +55,10 @@
   @apply mb-1 font-semibold;
 }
 
-.snackbar {
-  @apply invisible max-w-sm fixe object-top text-white bg-neutral-700 border-r-2 z-10 text-base p-4 text-center;
+.snackbar-visible {
+  @apply visible w-80 fixed object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
 }
 
-.snackbarFadeOut {
-  @apply opacity-0 invisible animate-fadeOut;
-}
-
-.snackbarFadIn {
-  @apply opacity-100 visible animate-fadeIn;
+.snackbar-invisible {
+  @apply invisible w-80 fixed object-top z-10;
 }

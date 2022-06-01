@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-interface IMessage {
-    text: string;
-}
-
-export function useSnackbar(iMessage: IMessage) {
+export function useSnackbar() {
     const [isActive, setIsActive] = useState(false);
 
     const [message, setMessage] = useState("");
@@ -13,11 +9,11 @@ export function useSnackbar(iMessage: IMessage) {
         if(isActive === true) {
             setTimeout(() => {
                 setIsActive(false);
-            }, 3000);
+            }, 5000);
         }
     }, [isActive]);
 
-    const openSnackBar = (msg = iMessage.text) => {
+    const openSnackBar = (msg = 'Failed to order') => {
         setMessage(msg);
         setIsActive(true);
     }

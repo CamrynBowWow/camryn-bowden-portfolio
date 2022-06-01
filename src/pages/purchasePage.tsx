@@ -44,7 +44,7 @@ const PurchasePage = (props:any) => {
   }
 
   const showSnackbar = (prop:string) => {
-    openSnackBar(props);
+    openSnackBar(prop);
   }
 
   const sendEmail = (event:any) => {
@@ -63,13 +63,13 @@ const PurchasePage = (props:any) => {
       });
       event.target.reset();
 
-      // alert(`You have ordered ${type}`)
       showSnackbar(`You have ordered ${type}`);
 
-      navigate("/");
+      //navigate("/");
 
     } else {
-      alert('Invalid request. Please check phone number, name or surname.')
+      console.log('failed')
+      showSnackbar('Invalid request. Please check phone number, name or surname.')
     }
   }
 
