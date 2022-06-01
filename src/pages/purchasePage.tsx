@@ -1,9 +1,12 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { useParams } from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSnackbar } from '../hooks/useSnackbar';
+import { Snackbar } from '../components/Snackbar';
 
 const PurchasePage = (props:any) => {
+
+  const { isActive, message, openSnackBar } = useSnackbar();
 
   const [isPhoneNumber, setIsPhoneNumber] = useState(0);
 
@@ -40,6 +43,10 @@ const PurchasePage = (props:any) => {
     }
   }
 
+  const showSnackbar = (prop:string) => {
+    openSnackBar(props);
+  }
+
   const sendEmail = (event:any) => {
     event.preventDefault();
 
@@ -56,7 +63,8 @@ const PurchasePage = (props:any) => {
       });
       event.target.reset();
 
-      alert(`You have ordered ${type}`)
+      // alert(`You have ordered ${type}`)
+      showSnackbar(`You have ordered ${type}`);
 
       navigate("/");
 
@@ -67,6 +75,8 @@ const PurchasePage = (props:any) => {
 
   return (
     <div className="h-screen flex flex-col items-center bg-neutral-50">
+
+      <Snackbar isActive={isActive} message={message} />
       
       <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5 items-center cursor-default mt-32 bg-gray-200 py-5 px-10 shadow-gray-700 shadow-lg rounded-md">
 
@@ -81,6 +91,7 @@ const PurchasePage = (props:any) => {
           <input type="submit" value="Order" className="order-input-purchase"></input>        
 
       </form>
+
     </div>
   )
 }
