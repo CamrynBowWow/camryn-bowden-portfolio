@@ -56,9 +56,9 @@
 }
 
 .snackbar-visible {
-  @apply visible w-80 fixed object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
+  @apply w-80 fixed top-20 object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
 }
 
 .snackbar-invisible {
-  @apply invisible w-80 fixed object-top z-10;
+  @apply opacity-0 top-20 w-80 fixed object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
 }

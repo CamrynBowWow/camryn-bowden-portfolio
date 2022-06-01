@@ -63,12 +63,11 @@ const PurchasePage = (props:any) => {
       });
       event.target.reset();
 
-      showSnackbar(`You have ordered ${type}`);
+      showSnackbar(`You ordered ${type}`);
 
       //navigate("/");
 
     } else {
-      console.log('failed')
       showSnackbar('Invalid request. Please check phone number, name or surname.')
     }
   }
