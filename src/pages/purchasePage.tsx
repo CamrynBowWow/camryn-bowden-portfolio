@@ -64,8 +64,9 @@ const PurchasePage = (props:any) => {
       event.target.reset();
 
       showSnackbar(`You ordered ${type}`);
-
-      //navigate("/");
+      setIsSurname('');
+      setIsName('');
+      setIsPhoneNumber(0);
 
     } else {
       showSnackbar('Invalid request. Please check phone number, name or surname.')
