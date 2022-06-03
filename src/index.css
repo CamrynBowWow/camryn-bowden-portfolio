@@ -62,3 +62,11 @@
 .snackbar-invisible {
   @apply opacity-0 top-20 w-80 fixed object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
 }
+
+.day-p-styling {
+  @apply flex flex-col text-4xl items-center;
+}
+
+.span-styling {
+  @apply bg-gray-300 p-4 text-5xl w-24 rounded-md flex justify-center;
+}

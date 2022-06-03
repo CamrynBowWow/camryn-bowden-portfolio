@@ -9,6 +9,7 @@ import Dropdown from './components/Dropdown';
 import Contact from './pages/contact';
 import OrderPage from './pages/OrderPage';
 import PurchasePage from './pages/purchasePage';
+import TimeStamp from './pages/timeStamp';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +43,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/orderPage" element={<OrderPage/>} />
         <Route path="/purchasePage/:type" element={<PurchasePage />} />
+        <Route path="/timeStamp" element={<TimeStamp/>} />
       </Routes>
       <Footer />
     </>
