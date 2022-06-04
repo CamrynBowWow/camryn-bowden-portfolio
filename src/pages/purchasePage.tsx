@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSnackbar } from '../hooks/useSnackbar';
 import { Snackbar } from '../components/Snackbar';
+import { getStaticProps } from './api/envValues';
 
 const PurchasePage = (props:any) => {
 
@@ -20,11 +21,9 @@ const PurchasePage = (props:any) => {
 
   const navigate = useNavigate();
 
-  const form = useRef<HTMLFormElement>(null);
+  const { publicKey, templateId, serviceId } = getStaticProps();
 
-  const publicKey : string = (process.env.REACT_APP_YOUR_PUBLIC_KEY as string);
-  const templateId : string = (process.env.REACT_APP_YOUR_TEMPLATE_ID as string);
-  const serviceId : string = (process.env.REACT_APP_YOUR_SERVICE_ID as string);
+  const form = useRef<HTMLFormElement>(null);
 
   const setName = (event:any) => {
     setIsName(event.target.value);
