@@ -7,7 +7,6 @@ type ToggleOptions = {
 
 const Navbar = ({toggle}: ToggleOptions) => {
   return (
-    // "h-5 w-5"
     <nav className="flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono" role='navigation'>
         <Link to='/' className='pl-4'>
           <svg className="w-7 hover:text-zinc-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

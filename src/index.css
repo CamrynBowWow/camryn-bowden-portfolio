@@ -64,9 +64,13 @@
 }
 
 .day-p-styling {
-  @apply flex flex-col text-4xl items-center;
+  @apply flex flex-col text-xl font-semibold items-center;
 }
 
 .span-styling {
-  @apply bg-gray-300 p-4 text-5xl w-24 rounded-md flex justify-center;
+  @apply  p-4 text-5xl w-24 rounded-md flex justify-center;
+}
+
+.timestamp-container {
+  @apply flex flex-col md:flex-row gap-10 bg-gradient-to-r from-indigo-400 to-pink-400 p-8 rounded-3xl shadow-2xl;
 }

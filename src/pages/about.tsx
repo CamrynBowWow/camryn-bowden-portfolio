@@ -13,7 +13,8 @@ const About = () => {
           <p className="text=3xl break-words w-3/4 font-mono italic">
           Hello, Welcome to the about page. 
           If you are lucky enough, I will tell you about myself.
-          I started coding in 2020/07/27 and here is how long its been going <Link to="/timeStamp" className="hover:text-blue-600 font-semibold">TIMESTAMP</Link>.
+          I started coding in 2020/07/27 and here is how long I've been doing it to 
+          <Link to="/timeStamp" className="hover:text-blue-600 uppercase font-semibold"> the Present day</Link>.
           These are the languages I know <b>C#</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>.
           You can look at my Github repo to see what I have done <a className="link-hover" href="https://github.com/SmallPeenwow">github.com/SmallPeenwow</a>
           </p>
