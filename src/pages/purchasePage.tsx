@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSnackbar } from '../hooks/useSnackbar';
 import { Snackbar } from '../components/Snackbar';
-import { getStaticProps } from './api/envValues';
+import { PUBLIC_ID, SERVICE_ID, TEMPLATE_ID } from '../envValues';
 
 const PurchasePage = (props:any) => {
 
@@ -20,8 +20,6 @@ const PurchasePage = (props:any) => {
   const {type} = useParams();
 
   const navigate = useNavigate();
-
-  const { publicKey, templateId, serviceId } = getStaticProps();
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -54,14 +52,13 @@ const PurchasePage = (props:any) => {
     }
     
     if (isPhoneNumber !== 0 && isError && isName.length !== 0 && isSurname.length !== 0){
-      emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_ID)
         .then((result) => {
           console.log(result.text);
         }, (error) => {
           console.log(error.text);
       });
       event.target.reset();
-
       showSnackbar(`You ordered ${type}`);
       setIsSurname('');
       setIsName('');
@@ -83,7 +80,7 @@ const PurchasePage = (props:any) => {
 
           <input type="text" placeholder="NAME" name="userName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setName}></input>
           <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setSurname}></input>
-          <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase" : "input-purchase bg-red-600"} onChange={setNumber}></input>
+          <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase" : "input-purchase-invalid"} onChange={setNumber}></input>
           
           <input type="text" name="peen" className="hidden" defaultValue={type}></input>
 
