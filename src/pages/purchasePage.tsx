@@ -40,6 +40,17 @@ const PurchasePage = (props:any) => {
     }
   }
 
+  const returnHomePage = () => {
+    makeValuesEmpty();
+    navigate('/');
+  }
+
+  const makeValuesEmpty = () => {
+    setIsSurname('');
+    setIsName('');
+    setIsPhoneNumber(0);
+  }
+
   const showSnackbar = (prop:string) => {
     openSnackBar(prop);
   }
@@ -60,9 +71,7 @@ const PurchasePage = (props:any) => {
       });
       event.target.reset();
       showSnackbar(`You ordered ${type}`);
-      setIsSurname('');
-      setIsName('');
-      setIsPhoneNumber(0);
+      makeValuesEmpty();
 
     } else {
       showSnackbar('Invalid request. Please check phone number, name or surname.')
@@ -74,17 +83,20 @@ const PurchasePage = (props:any) => {
 
       <Snackbar isActive={isActive} message={message} />
       
-      <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5 items-center cursor-default mt-32 bg-gray-200 py-5 px-10 shadow-gray-700 shadow-lg rounded-md">
+      <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5 items-center justify-center cursor-default mt-32 bg-gray-200 py-10 px-14 shadow-gray-700 shadow-lg rounded-md">
 
         <h1 className="menu-header border-b-2 border-b-black">Client Information</h1>
 
-          <input type="text" placeholder="NAME" name="userName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setName}></input>
-          <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setSurname}></input>
-          <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase" : "input-purchase-invalid"} onChange={setNumber}></input>
-          
-          <input type="text" name="peen" className="hidden" defaultValue={type}></input>
-
+        <input type="text" placeholder="NAME" name="userName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setName}></input>
+        <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setSurname}></input>
+        <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase" : "input-purchase-invalid"} onChange={setNumber}></input>
+        
+        <input type="text" name="peen" className="hidden" defaultValue={type}></input>
+        
+        <div className="flex w-full justify-around gap-8 p-2 items-center">
+          <input type="reset" value="Cancel" className="cancel-input-purchase" onClick={returnHomePage}></input>
           <input type="submit" value="Order" className="order-input-purchase"></input>        
+        </div> 
 
       </form>
 
