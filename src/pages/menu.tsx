@@ -63,12 +63,29 @@ const Menu = () => {
 
             <p className="pro-con-style">Pros</p>
             <div className="li-tags">
-              <li></li>
+              <li>Brings good vibs</li>
+              <li>Wares funny shirts</li>
+              <li>Wears the same colour socks</li>
+              <li>Has good eyesight</li>
             </div>
 
             <p className="pro-con-style">Cons</p>
             <div className="li-tags">
-              <li></li>             
+              <li>Naps often</li>             
+              <li>Says hectic and based a lot</li>             
+              <li>Says funny things - not actually funny</li>             
+              <li>Moans and grunts often</li>             
+              <li>Wears hoodie all the time</li>             
+              <li>Hectic</li>             
+              <li>Doesn't enjoy inspirational speeches</li>   
+              <li>Often falls over for no reason</li>          
+              <li>Can't read or write</li>          
+              <li>Often gets off his leash</li>          
+              <li>Not very accurate in the toilet</li>
+              <li>Based</li>          
+              <li>Walks into things</li>
+              <li>Enjoys the sun to much - will probably get cancer</li>     
+              <li>Life expectancy 2 to 5 years max</li>     
             </div>
           </div>
           
@@ -78,12 +95,12 @@ const Menu = () => {
 
             <p className="pro-con-style">Pros</p>
             <div className="li-tags">
-              <li></li>
+              <li>Works effectively remotely</li>
             </div>
 
             <p className="pro-con-style">Cons</p>
             <div className="li-tags">
-              <li></li>
+              <li>Not able to walk</li>
             </div>
           </div>
         </div>
