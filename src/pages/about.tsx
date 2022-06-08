@@ -24,6 +24,7 @@ const About = () => {
         
             <li>CSS Tailwind</li>
             <li>React</li>
+            <li>TypeScript</li>
             <li>Material UI</li>
             <li>Socket.io</li>     
             <li>Sass</li>     
