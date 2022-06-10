@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSnackbar } from '../hooks/useSnackbar';
 import { Snackbar } from '../components/Snackbar';
 import { PUBLIC_ID, SERVICE_ID, TEMPLATE_ID } from '../envValues';
+import { ErrorChecking } from '../hooks/clientErrorCheck';
 
 const PurchasePage = (props:any) => {
 
@@ -74,7 +75,8 @@ const PurchasePage = (props:any) => {
       makeValuesEmpty();
 
     } else {
-      showSnackbar('Invalid request. Please check phone number, name or surname.')
+      const { errorMessage } = ErrorChecking({name: isName, surname: isSurname, phoneNumber: isPhoneNumber});
+      showSnackbar(`Invalid request. ${errorMessage}`)
     }
   }
 

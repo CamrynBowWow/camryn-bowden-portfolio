@@ -68,11 +68,11 @@
 }
 
 .snackbar-visible {
-  @apply w-80 fixed top-20 object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
+  @apply w-96 fixed top-20 object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-left;
 }
 
 .snackbar-invisible {
-  @apply opacity-0 top-20 w-80 fixed object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
+  @apply opacity-0 top-20 w-96 fixed object-top text-white bg-neutral-700 rounded-lg z-10 text-base p-4 text-center;
 }
 
 .day-p-styling {
