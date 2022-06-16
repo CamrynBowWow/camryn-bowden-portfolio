@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-export class Snackbar extends PureComponent<{ message: string; isActive: boolean}> {
+export class Snackbar extends PureComponent<{ message: string; isActive: boolean; error: boolean; }> {
     render() {
         const { isActive, message } = this.props;
         return (

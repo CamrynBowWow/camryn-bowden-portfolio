@@ -18,6 +18,8 @@ const PurchasePage = (props:any) => {
 
   const [isError, setIsError] = useState(true);
 
+  const [isSnackbarError, setIsSnackbarError] = useState(true);
+
   const {type} = useParams();
 
   const navigate = useNavigate();
@@ -73,17 +75,18 @@ const PurchasePage = (props:any) => {
       event.target.reset();
       showSnackbar(`You ordered ${type}`);
       makeValuesEmpty();
-
+      setIsSnackbarError(true);
     } else {
       const { errorMessage } = ErrorChecking({name: isName, surname: isSurname, phoneNumber: isPhoneNumber});
-      showSnackbar(`Invalid request. ${errorMessage}`)
+      showSnackbar(`Invalid request. ${errorMessage}`);
+      setIsSnackbarError(false);
     }
   }
 
   return (
     <div className="h-screen flex flex-col items-center bg-neutral-50">
 
-      <Snackbar isActive={isActive} message={message} />
+      <Snackbar isActive={isActive} message={message} error={isSnackbarError}/>
       
       <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5 items-center justify-center cursor-default mt-32 bg-gray-200 py-10 px-14 shadow-gray-700 shadow-lg rounded-md">
 
