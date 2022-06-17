@@ -16,7 +16,11 @@ const PurchasePage = (props:any) => {
 
   const [isSurname, setIsSurname] = useState("");
 
-  const [isError, setIsError] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  const [isEmailValid, setIsEmailValid] = useState(true);
+
+  const [isEmail, setIsEmail] = useState("");
 
   const [isSnackbarError, setIsSnackbarError] = useState(true);
 
@@ -26,23 +30,28 @@ const PurchasePage = (props:any) => {
 
   const form = useRef<HTMLFormElement>(null);
 
-  const setName = (event:any) => {
+  const SetName = (event:any) => {
     setIsName(event.target.value);
   }
 
-  const setSurname = (event:any) => {
+  const SetSurname = (event:any) => {
     setIsSurname(event.target.value);
   }
 
-  const setNumber = (event:any) => { 
-    if(isNaN(event.target.value)){
+  const SetNumber = (event:any) => { 
+    if(!isNaN(event.target.value)){
       setIsError(false);
     } else {
       setIsError(true);
-      setIsPhoneNumber(event.target.value);
     }
+    setIsPhoneNumber(event.target.value);
   }
 
+  const SetEmail = (event:any) => {
+    setIsEmail(event.target.value);
+  }
+
+  
   const returnHomePage = () => {
     makeValuesEmpty();
     navigate('/');
@@ -52,6 +61,9 @@ const PurchasePage = (props:any) => {
     setIsSurname('');
     setIsName('');
     setIsPhoneNumber(0);
+    setIsEmailValid(true);
+    setIsError(false);
+    setIsEmail('');
   }
 
   const showSnackbar = (prop:string) => {
@@ -65,7 +77,10 @@ const PurchasePage = (props:any) => {
       return;
     }
     
-    if (isPhoneNumber !== 0 && isError && isName.length !== 0 && isSurname.length !== 0){
+    const { errorMessage, checkedInfo, emailChecked } = ErrorChecking({name: isName, surname: isSurname, phoneNumber: isPhoneNumber, errorCheck: isError, email: isEmail});
+    setIsEmailValid(emailChecked)
+    
+    if (checkedInfo){
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_ID)
         .then((result) => {
           console.log(result.text);
@@ -77,7 +92,6 @@ const PurchasePage = (props:any) => {
       makeValuesEmpty();
       setIsSnackbarError(true);
     } else {
-      const { errorMessage } = ErrorChecking({name: isName, surname: isSurname, phoneNumber: isPhoneNumber});
       showSnackbar(`Invalid request. ${errorMessage}`);
       setIsSnackbarError(false);
     }
@@ -92,10 +106,11 @@ const PurchasePage = (props:any) => {
 
         <h1 className="menu-header border-b-2 border-b-black">Client Information</h1>
 
-        <input type="text" placeholder="NAME" name="userName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setName}></input>
-        <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase" onChange={setSurname}></input>
-        <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase" : "input-purchase-invalid"} onChange={setNumber}></input>
-        
+        <input type="text" placeholder="NAME" name="userName" maxLength={20} autoComplete="off" className="input-purchase" onChange={SetName}></input>
+        <input type="text" placeholder="SURNAME" name="surName" maxLength={20} autoComplete="off" className="input-purchase" onChange={SetSurname}></input>
+        <input type="text" placeholder="PHONE NUMBER" name="phoneNumber" maxLength={20} autoComplete="off" className={isError ? "input-purchase-invalid" : "input-purchase"} onChange={SetNumber}></input>     
+        <input type="text" placeholder="EMAIL" name="userEmail" maxLength={50} className={isEmailValid ? "input-purchase" : "input-purchase-invalid"} onChange={SetEmail}></input>
+
         <input type="text" name="peen" className="hidden" defaultValue={type}></input>
         
         <div className="flex w-full justify-around gap-8 p-2 items-center">
