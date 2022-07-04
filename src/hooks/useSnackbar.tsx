@@ -7,11 +7,15 @@ export function useSnackbar() {
 
     useEffect(() => {
         if(isActive === true) {
-            setTimeout(() => {
+            const timer = setTimeout(() => {
                 setIsActive(false);
             }, 8000);
+            
+            return () => {
+                clearTimeout(timer);
+            };
         }
-    }, [isActive]);
+    },[isActive]);
 
     const openSnackBar = (msg = 'Failed to order') => {
         setMessage(msg);

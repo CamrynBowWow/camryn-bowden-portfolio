@@ -29,7 +29,8 @@ const About = () => {
             <li>Socket.io</li>     
             <li>Sass</li>     
             <li>Next.js</li>        
-            <li>Firebase</li>     
+            <li>Firebase</li> 
+            <li>GraphQL</li>    
 
           </div>
 
