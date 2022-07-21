@@ -1,12 +1,6 @@
 import { collectionData } from '../utils/fetchData';
 import Card from './Card';
 
-console.log(
-	collectionData.forEach((t: any) => {
-		console.log(t.img, t.dateCreated);
-	})
-);
-
 const Content = () => {
 	return (
 		<>
