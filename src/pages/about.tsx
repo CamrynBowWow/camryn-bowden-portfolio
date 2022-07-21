@@ -23,7 +23,7 @@ const About = () => {
 					</Link>
 					. These are the languages I know <b>C#</b>, <b>Javascript</b>, <b>C++</b>, <b>Java</b>, <b>SQL</b>, <b>CSS/HTML</b> and <b>Python</b>. You
 					can look at my Github repo to see what I have done{' '}
-					<a className='link-hover' href='https://github.com/SmallPeenwow'>
+					<a className='link-hover' href='https://github.com/SmallPeenwow' target='_blank' rel='noreferrer'>
 						github.com/SmallPeenwow
 					</a>
 				</p>

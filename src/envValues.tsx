@@ -5,3 +5,13 @@ const PUBLIC_ID = process.env.REACT_APP_YOUR_PUBLIC_KEY as string;
 const TEMPLATE_ID = process.env.REACT_APP_YOUR_TEMPLATE_ID as string;
 
 export { SERVICE_ID, PUBLIC_ID, TEMPLATE_ID };
+
+const APIKEY = process.env.REACT_APP_YOUR_APIKEY as string;
+const AUTHDOMAIN = process.env.REACT_APP_YOUR_AUTHDOMAIN as string;
+const PROJECTID = process.env.REACT_APP_YOUR_PROJECTID as string;
+const STORAGEBUCKET = process.env.REACT_APP_YOUR_STORAGEBUCKET as string;
+const MESSAGINGSENDERID = process.env.REACT_APP_YOUR_MESSAGINGSENDERID as string;
+const APPID = process.env.REACT_APP_YOUR_APPID as string;
+const MEASUREMENTID = process.env.REACT_APP_YOUR_MEASUREMENTID as string;
+
+export { APIKEY, AUTHDOMAIN, PROJECTID, STORAGEBUCKET, MESSAGINGSENDERID, APPID, MEASUREMENTID };
