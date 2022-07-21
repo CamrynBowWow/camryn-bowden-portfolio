@@ -1,18 +1,19 @@
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
 import { config } from '../config/config';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
-const db = initializeApp(config.firebaseConfig);
+export const firebaseInitialize = initializeApp(config.firebaseConfig);
 
-const firestoreDatabase = getFirestore(db);
+const firestoreDb = getFirestore(firebaseInitialize);
 
-const domainRef = collection(firestoreDatabase, 'domains');
+const collectionRef = collection(firestoreDb, 'domains');
 
-export const docs = getDocs(domainRef).then((snapshot) => {
-	console.log(snapshot.docs);
-});
+export let collectionData: any = [];
 
-// export const querySnapshot = getDocs(collection(firestoreDatabase, 'domains'));
-// querySnapshot.forEach((doc) => {
-// 	console.log(`${doc.id} => ${doc.data()}`);
-// });
+getDocs(collectionRef)
+	.then((snapshot) => {
+		snapshot.docs.forEach((doc) => {
+			collectionData.push({ ...doc.data(), id: doc.id });
+		});
+	})
+	.catch((err) => {});
