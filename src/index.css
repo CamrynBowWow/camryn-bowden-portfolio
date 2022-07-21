@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .menu-card {
-	@apply flex flex-col justify-center items-center bg-neutral-50 h-screen font-mono py-40;
+	@apply flex flex-col justify-center items-center font-mono py-40;
 }
 
 .center-content {
-	@apply flex flex-col justify-center items-center;
+	@apply flex flex-col gap-4 font-mono font-thin justify-center items-center cursor-default;
 }
 
 .link-hover {

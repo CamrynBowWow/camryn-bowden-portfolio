@@ -4,10 +4,10 @@ import Hero from '../components/Hero';
 
 const Home = () => {
 	return (
-		<>
+		<div className='bg-neutral-50 h-full flex flex-col pt-32 gap-20 justify-content'>
 			<Hero />
 			<Content />
-		</>
+		</div>
 	);
 };
 

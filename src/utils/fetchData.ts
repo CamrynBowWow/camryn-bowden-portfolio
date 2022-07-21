@@ -12,8 +12,10 @@ export let collectionData: any = [];
 
 getDocs(collectionRef)
 	.then((snapshot) => {
+		let col: any = [];
 		snapshot.docs.forEach((doc) => {
-			collectionData.push({ ...doc.data(), id: doc.id });
+			col.push({ ...doc.data(), id: doc.id });
 		});
+		collectionData = [...col];
 	})
 	.catch((err) => {});

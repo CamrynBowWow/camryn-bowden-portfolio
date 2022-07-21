@@ -1,28 +1,19 @@
-import React from 'react';
-import ImageOne from '../images/Evel_Knievel-Chase.png';
-import ImageTwo from '../images/SupportKing.png';
 import { collectionData } from '../utils/fetchData';
+import Card from './Card';
 
-console.log(collectionData);
+console.log(
+	collectionData.forEach((t: any) => {
+		console.log(t.img, t.dateCreated);
+	})
+);
 
 const Content = () => {
 	return (
 		<>
 			<div className='menu-card'>
-				<img src={ImageOne} alt='' className='h-full rounded mb-20 shadow' />
-				<div className='center-content'>
-					<h2 className='text-2xl mb-2'>Peen Memes SABUS</h2>
-					<p className='mb-2'>Stunts where never the same after this man</p>
-					<span>R4500</span>
-				</div>
-			</div>
-			<div className='menu-card'>
-				<img src={ImageTwo} alt='' className='h-full rounded mb-20 shadow' />
-				<div className='center-content'>
-					<h2 className='text-2xl mb-2'>Support King</h2>
-					<p className='mb-2'>Support never failed under this man</p>
-					<span>R44500</span>
-				</div>
+				{collectionData.map((data: any) => (
+					<Card key={data.id} url={data.url} title={data.title} desc={data.desc} img={data.img} dateCreated={data.dateCreated} />
+				))}
 			</div>
 		</>
 	);
