@@ -1,6 +1,11 @@
 import React from 'react';
 import ImageOne from '../images/Evel_Knievel-Chase.png';
 import ImageTwo from '../images/SupportKing.png';
+import { docs } from '../utils/fetchData';
+
+let r = docs;
+
+console.log(r);
 
 const Content = () => {
 	return (

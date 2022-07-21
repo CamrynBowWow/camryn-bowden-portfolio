@@ -10,6 +10,10 @@ import Contact from './pages/contact';
 import OrderPage from './pages/OrderPage';
 import PurchasePage from './pages/purchasePage';
 import TimeStamp from './pages/timeStamp';
+// import { initializeApp } from 'firebase/app';
+// import { config } from './config/config';
+
+// initializeApp(config.firebaseConfig);
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
