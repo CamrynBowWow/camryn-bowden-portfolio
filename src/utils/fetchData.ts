@@ -2,9 +2,9 @@ import { config } from '../config/config';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
-export const firebaseInitialize = initializeApp(config.firebaseConfig);
+initializeApp(config.firebaseConfig);
 
-const firestoreDb = getFirestore(firebaseInitialize);
+const firestoreDb = getFirestore();
 
 const collectionRef = collection(firestoreDb, 'domains');
 
@@ -12,10 +12,10 @@ export let collectionData: any = [];
 
 getDocs(collectionRef)
 	.then((snapshot) => {
-		let col: any = [];
 		snapshot.docs.forEach((doc) => {
-			col.push({ ...doc.data(), id: doc.id });
+			collectionData.push({ ...doc.data(), id: doc.id });
 		});
-		collectionData = [...col];
 	})
-	.catch((err) => {});
+	.catch((err) => {
+		console.log('Why did you look here?!');
+	});
