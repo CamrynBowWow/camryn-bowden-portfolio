@@ -18,7 +18,7 @@ const Card = ({ url, title, desc, img, dateCreated }: CardProps) => {
 			</a>
 			<div className='center-content'>
 				<p className=' w-2/3 '>{desc}</p>
-				<span className='text-sm'>Date Project Was Created: {dateCreated.toDate().toLocaleString()}</span>
+				<span className='text-sm border-b-2 border-black border-solid'>Date Project Was Created: {dateCreated.toDate().toLocaleString()}</span>
 			</div>
 		</div>
 	);

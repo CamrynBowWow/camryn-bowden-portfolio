@@ -1,6 +1,6 @@
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { config } from '../config/config';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 initializeApp(config.firebaseConfig);
 
