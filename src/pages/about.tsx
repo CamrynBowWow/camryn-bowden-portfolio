@@ -40,6 +40,7 @@ const About = () => {
 					<li>Next.js</li>
 					<li>Firebase</li>
 					<li>GraphQL</li>
+					<li>Prisma</li>
 				</div>
 			</div>
 		</>
