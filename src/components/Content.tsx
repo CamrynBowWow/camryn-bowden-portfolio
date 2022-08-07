@@ -1,22 +1,32 @@
+import { getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { collectionData } from '../utils/fetchData';
+import { collectionRef } from '../utils/fetchData';
 import Card from './Card';
 
 const Content = () => {
-	// const [hasData, setHasData] = useState(false);
+	const [domains, setDomains] = useState([]);
 
-	// useEffect(() => {
-	// 	// if (collectionData.length !== 0) {
-	// 	setHasData(true);
-	// 	// }
-	// }, [hasData]);
-	// TODO: need this to reload or find a way to make my functions work in sync
+	useEffect(() => {
+		getDocs(collectionRef)
+			.then((snapshot) => {
+				let data: any = [];
+
+				snapshot.docs.forEach((doc) => {
+					data.push({ ...doc.data(), id: doc.id });
+				});
+
+				setDomains(data);
+			})
+			.catch((err) => {
+				console.log('Why did you look here?!');
+			});
+	}, []);
 
 	return (
 		<>
 			<div className='menu-card'>
-				{collectionData.length !== 0
-					? collectionData.map((data: any) => (
+				{domains.length !== 0
+					? domains.map((data: any) => (
 							<Card key={data.id} url={data.url} title={data.title} desc={data.desc} img={data.img} dateCreated={data.dateCreated} />
 					  ))
 					: ''}

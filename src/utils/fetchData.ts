@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection } from 'firebase/firestore';
 import { config } from '../config/config';
 import { initializeApp } from 'firebase/app';
 
@@ -6,16 +6,4 @@ initializeApp(config.firebaseConfig);
 
 const firestoreDb = getFirestore();
 
-const collectionRef = collection(firestoreDb, 'domains');
-
-export let collectionData: any = [];
-
-getDocs(collectionRef)
-	.then((snapshot) => {
-		snapshot.docs.forEach((doc) => {
-			collectionData.push({ ...doc.data(), id: doc.id });
-		});
-	})
-	.catch((err) => {
-		console.log('Why did you look here?!');
-	});
+export const collectionRef = collection(firestoreDb, 'domains');
