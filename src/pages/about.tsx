@@ -26,11 +26,11 @@ const About = () => {
 					You can look at my Github repo to see what I have done{' '}
 					<a
 						className='link-hover'
-						href='https://github.com/SmallPeenwow'
+						href='https://github.com/CamrynBowWow'
 						target='_blank'
 						rel='noreferrer'
 					>
-						github.com/SmallPeenwow
+						github.com/CamrynBowWow
 					</a>
 				</p>
 
